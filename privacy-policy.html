@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy – Mera Drum</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f7f5f0;
+      --surface: #ffffff;
+      --accent: #1a472a;
+      --accent-light: #e8f0ea;
+      --text: #1c1c1a;
+      --muted: #6b6b67;
+      --border: #e0ddd6;
+      --radius: 12px;
+    }
+
+    body {
+      background: var(--bg);
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      min-height: 100vh;
+      padding: 3rem 1rem 5rem;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .header {
+      background: var(--accent);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 3rem 3rem 2.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: 40px;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .header-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.85);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 100px;
+      margin-bottom: 1.25rem;
+    }
+
+    .header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .header-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 13px;
+      color: rgba(255,255,255,0.7);
+      position: relative;
+    }
+
+    .header-meta span { display: flex; align-items: center; gap: 5px; }
+
+    /* Placeholder styling */
+    .ph {
+      background: rgba(255,255,255,0.2);
+      border: 1px dashed rgba(255,255,255,0.5);
+      color: rgba(255,255,255,0.9);
+      border-radius: 5px;
+      padding: 1px 8px;
+      font-style: italic;
+      font-size: 0.95em;
+    }
+
+    .ph-dark {
+      background: #fff8e1;
+      border: 1px dashed #f9a825;
+      color: #5d4037;
+      border-radius: 5px;
+      padding: 1px 7px;
+      font-style: italic;
+      font-size: 0.93em;
+    }
+
+    /* Notice box */
+    .notice {
+      background: #fff8e1;
+      border-left: 3px solid #f9a825;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      font-size: 13.5px;
+      color: #5d4037;
+      line-height: 1.6;
+    }
+
+    .notice strong { font-weight: 500; }
+
+    /* Section cards */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem 2.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--accent-light);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .card-icon svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+    .card h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-top: 6px;
+    }
+
+    .card p, .card li {
+      font-size: 14.5px;
+      line-height: 1.8;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .card ul {
+      padding-left: 1.2rem;
+      margin: 0.5rem 0;
+    }
+
+    .card li::marker { color: var(--accent); }
+
+    hr.divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 1rem 0;
+    }
+
+    /* Contact card special */
+    .contact-card {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+    }
+
+    .contact-card h2 { color: #fff; }
+    .contact-card .card-icon { background: rgba(255,255,255,0.15); }
+    .contact-card .card-icon svg { stroke: #fff; }
+    .contact-card p { color: rgba(255,255,255,0.75); }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 0.75rem;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 14px;
+      text-decoration: none;
+      width: fit-content;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      font-size: 12.5px;
+      color: var(--muted);
+      margin-top: 2.5rem;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 500px) {
+      .header { padding: 2rem 1.5rem; }
+      .card { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <div class="header-tag">Legal Document</div>
+      <h1>Privacy Policy<br><span class="ph">Mera Drum</span></h1>
+      <div class="header-meta">
+        <span>Developer: <span class="ph">siddharth gedam</span></span>
+        <span>Last updated: <span id="date"></span></span>
+        <span>Version 1.0</span>
+      </div>
+    </div>
+
+    <!-- Notice -->
+    <!-- <div class="notice">
+      <strong>Note for developer:</strong> Replace all <span style="background:#fff8e1;border:1px dashed #f9a825;border-radius:4px;padding:1px 6px;font-style:italic;">[bracketed placeholders]</span> with your actual app name, developer name, and contact email before uploading to GitHub Pages or any hosting platform.
+    </div> -->
+
+    <!-- 1. Introduction -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <h2>Introduction</h2>
+      </div>
+      <p>This Privacy Policy describes how <span class="ph-dark">siddharth gedam</span> ("I", "me", or "my") collects, uses, and protects information when you use the <span class="ph-dark">Mera Drum</span> mobile application (the "App") on Android devices.</p>
+      <p>By downloading or using the App, you agree to the terms of this Privacy Policy. If you do not agree, please discontinue use of the App.</p>
+    </div>
+
+    <!-- 2. Information collected -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h2>Information We Collect</h2>
+      </div>
+      <p>The App may collect the following personal information that you voluntarily provide:</p>
+      <ul>
+        <li><strong>Name</strong> — provided when you create an account or use features that require identification.</li>
+        <li><strong>Email address</strong> — used for account creation, login, and customer support.</li>
+      </ul>
+      <hr class="divider">
+      <p>We do <strong>not</strong> collect location data, device identifiers, payment information, or any other personal data beyond what is listed above.</p>
+    </div>
+
+    <!-- 3. How we use -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h2>How We Use Your Information</h2>
+      </div>
+      <p>Your information is used only to:</p>
+      <ul>
+        <li>Provide and operate the App's core features.</li>
+        <li>Respond to your support requests or questions.</li>
+        <li>Improve functionality and user experience over time.</li>
+        <li>Send important service-related notifications (if applicable).</li>
+      </ul>
+      <hr class="divider">
+      <p>We do <strong>not</strong> sell, trade, rent, or share your personal information with any third party for marketing or commercial purposes.</p>
+    </div>
+
+    <!-- 4. Third-party services -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h2>Third-Party Services</h2>
+      </div>
+      <p>The current version of the App <strong>does not</strong> use any third-party advertising networks, analytics tools, crash reporting services, or tracking SDKs.</p>
+      <p>Future versions of the App may integrate the following services. This policy will be updated <em>before</em> any such integration goes live:</p>
+      <ul>
+        <li><strong>Google AdMob</strong> — for displaying in-app advertisements.</li>
+        <li><strong>Firebase Analytics</strong> — for anonymised usage analytics.</li>
+        <li><strong>Firebase Crashlytics</strong> — for crash and error reporting.</li>
+      </ul>
+      <p>When third-party services are added, their respective privacy policies will also apply to data they independently collect.</p>
+    </div>
+
+    <!-- 5. Data retention -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h2>Data Retention</h2>
+      </div>
+      <p>We retain your personal data only for as long as necessary to deliver the App's services or to comply with legal obligations.</p>
+      <p>You may request deletion of your data at any time by contacting us at the email address provided below. We will process deletion requests within 30 days.</p>
+    </div>
+
+    <!-- 6. Security -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h2>Security</h2>
+      </div>
+      <p>We implement commercially reasonable technical and organisational measures to protect your personal information from unauthorised access, disclosure, alteration, or destruction.</p>
+      <p>However, no method of electronic storage or transmission is 100% secure. We cannot guarantee absolute security but are committed to maintaining best practices.</p>
+    </div>
+
+    <!-- 7. Children's privacy -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h2>Children's Privacy</h2>
+      </div>
+      <p>The App is not directed to children under the age of 13. We do not knowingly collect personal information from children under 13 years of age.</p>
+      <p>If you are a parent or guardian and believe your child has provided us with personal data, please contact us immediately. We will promptly delete such information upon verification.</p>
+    </div>
+
+    <!-- 8. Your rights -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <h2>Your Rights</h2>
+      </div>
+      <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+      <ul>
+        <li><strong>Access</strong> — request a copy of the data we hold about you.</li>
+        <li><strong>Correction</strong> — request that we correct inaccurate or incomplete data.</li>
+        <li><strong>Deletion</strong> — request that we erase your personal data.</li>
+        <li><strong>Withdrawal of consent</strong> — stop using the App and uninstall it at any time.</li>
+      </ul>
+      <p>To exercise any of these rights, please contact us using the information below.</p>
+    </div>
+
+    <!-- 9. Changes -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        </div>
+        <h2>Changes to This Policy</h2>
+      </div>
+      <p>We may update this Privacy Policy periodically to reflect changes in the App or applicable laws. When we do, we will revise the "Last updated" date at the top of this page.</p>
+      <p>We encourage you to review this policy whenever you use the App. Continued use of the App after changes are posted constitutes your acceptance of the revised policy.</p>
+    </div>
+
+    <!-- 10. Contact -->
+    <div class="card contact-card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h2>Contact Us</h2>
+      </div>
+      <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your personal data, please reach out:</p>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:hemantmarkhande99@gmail.com">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          hemantmarkhande99@gmail.com
+        </a>
+        <span style="font-size:13px;color:rgba(255,255,255,0.6);padding-left:4px;">Developer: siddharth gedam</span>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>This Privacy Policy is effective as of <span id="date2"></span>.</p>
+      <p style="margin-top:6px;">© <span id="year"></span> <span>siddharth gedam</span>. All rights reserved.</p>
+    </div>
+
+  </div>
+
+  <script>
+    const opts = { day: 'numeric', month: 'long', year: 'numeric' };
+    const d = new Date().toLocaleDateString('en-GB', opts);
+    document.getElementById('date').textContent = d;
+    document.getElementById('date2').textContent = d;
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
